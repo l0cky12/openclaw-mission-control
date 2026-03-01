@@ -3,7 +3,10 @@
 Mission control dashboard for OpenClaw with:
 
 - Agent activity/status tracking
-- Auto-watch mode for all local OpenClaw workspaces (`workspace*`)
+- Auto-watch mode for all local OpenClaw agents:
+  - legacy workspaces (`workspace*`)
+  - standalone agent workspaces (for example `notes-taking`, `personal-assistant`)
+  - runtime agent session folders (`.openclaw/agents/*`)
 - Manual "Refresh Agents" action and "last seen" age indicators
 - Cron job monitoring
 - Kanban board for agent tasks (`To Do`, `Doing`, `Done`)
@@ -23,7 +26,7 @@ Open `http://localhost:3000`.
 
 - `GET /api/overview` - overview KPIs and token aggregates
 - `GET /api/agents` - agent status
-- `GET /api/agents?watched=true` - merged heartbeat + auto-discovered workspace agents
+- `GET /api/agents?watched=true` - merged heartbeat + auto-discovered OpenClaw agents
 - `POST /api/agents/heartbeat` - upsert agent heartbeat
 - `GET /api/cron` - cron job state
 - `POST /api/cron/report` - upsert cron run status
