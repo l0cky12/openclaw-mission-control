@@ -1,3 +1,4 @@
+import { AgentsPanel } from "@/components/AgentsPanel";
 import { KanbanBoard } from "@/components/KanbanBoard";
 import { getOverview } from "@/lib/analytics";
 import { getWatchedAgents } from "@/lib/agentWatcher";
@@ -32,23 +33,7 @@ export default async function Home() {
       </section>
 
       <section className="mb-6 grid grid-cols-1 gap-4 lg:grid-cols-2">
-        <article className="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4">
-          <h2 className="mb-3 text-lg font-semibold">Agents</h2>
-          <div className="space-y-3">
-            {watchedAgents.map((agent) => (
-              <div key={agent.id} className="rounded-lg border border-zinc-800 bg-zinc-900/70 p-3">
-                <div className="flex items-center justify-between gap-3">
-                  <p className="font-semibold">{agent.name}</p>
-                  <span className={`rounded px-2 py-1 text-xs font-medium ${badgeFor(agent.status)}`}>
-                    {agent.status}
-                  </span>
-                </div>
-                <p className="mt-1 text-sm text-zinc-400">{agent.task}</p>
-                <p className="mt-1 text-xs text-zinc-500">Last heartbeat: {new Date(agent.lastHeartbeatAt).toLocaleString()}</p>
-              </div>
-            ))}
-          </div>
-        </article>
+        <AgentsPanel initialAgents={watchedAgents} />
 
         <article className="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4">
           <h2 className="mb-3 text-lg font-semibold">Cron Jobs</h2>
