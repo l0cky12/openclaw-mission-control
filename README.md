@@ -3,7 +3,10 @@
 Mission control dashboard for OpenClaw with:
 
 - Agent activity/status tracking
-- Auto-watch mode for all local OpenClaw workspaces (`workspace*`)
+- Auto-watch mode for all local OpenClaw agents:
+  - legacy workspaces (`workspace*`)
+  - standalone agent workspaces (for example `notes-taking`, `personal-assistant`)
+  - runtime agent session folders (`.openclaw/agents/*`)
 - Manual "Refresh Agents" action and "last seen" age indicators
 - Cron job monitoring
 - Kanban board for agent tasks (`To Do`, `Doing`, `Done`)
