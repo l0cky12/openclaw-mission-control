@@ -50,6 +50,14 @@ If unset, auth is disabled.
 
 ## Docker deploy
 
+Set `.env` values first:
+
+```bash
+ADMIN_USER=admin
+ADMIN_PASS=change-me
+OPENCLAW_HOST_HOME=/home/liam/.openclaw
+```
+
 ```bash
 docker compose up -d --build
 ```

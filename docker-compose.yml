@@ -3,12 +3,14 @@ services:
     build: .
     container_name: openclaw-mission-control
     ports:
-      - "3000:3000"
+      - "3004:3000"
     environment:
       - ADMIN_USER=admin
       - ADMIN_PASS=change-me
+      - OPENCLAW_HOME=/openclaw
     volumes:
       - mission_control_data:/app/data
+      - ${OPENCLAW_HOST_HOME:-/home/liam/.openclaw}:/openclaw:ro
     restart: unless-stopped
 
 volumes:
