@@ -26,7 +26,7 @@ Open `http://localhost:3000`.
 
 - `GET /api/overview` - overview KPIs and token aggregates
 - `GET /api/agents` - agent status
-- `GET /api/agents?watched=true` - merged heartbeat + auto-discovered workspace agents
+- `GET /api/agents?watched=true` - merged heartbeat + auto-discovered OpenClaw agents
 - `POST /api/agents/heartbeat` - upsert agent heartbeat
 - `GET /api/cron` - cron job state
 - `POST /api/cron/report` - upsert cron run status
