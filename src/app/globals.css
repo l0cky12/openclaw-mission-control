@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+:root {
+  --font-sans: var(--font-plex);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 10% 0%, #13213f 0%, transparent 35%),
+    radial-gradient(circle at 90% 10%, #203052 0%, transparent 35%),
+    linear-gradient(180deg, #090d1a 0%, #0f1424 60%, #0b101d 100%);
+  color: #f5f7ff;
+  font-family: var(--font-plex), sans-serif;
+}

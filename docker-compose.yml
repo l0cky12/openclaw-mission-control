@@ -1,0 +1,15 @@
+services:
+  mission-control:
+    build: .
+    container_name: openclaw-mission-control
+    ports:
+      - "3000:3000"
+    environment:
+      - ADMIN_USER=admin
+      - ADMIN_PASS=change-me
+    volumes:
+      - mission_control_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  mission_control_data:

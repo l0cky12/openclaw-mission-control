@@ -1,0 +1,43 @@
+{
+  "agents": [
+    {
+      "id": "coder",
+      "name": "Alan Turing",
+      "status": "working",
+      "task": "Build OpenClaw Mission Control",
+      "lastHeartbeatAt": "2026-03-01T02:10:00.000Z"
+    }
+  ],
+  "cronJobs": [
+    {
+      "id": "sync-spotify",
+      "name": "Spotify snapshot sync",
+      "schedule": "every 6 hours",
+      "intervalMinutes": 360,
+      "lastRunAt": "2026-03-01T00:00:00.000Z",
+      "lastStatus": "ok",
+      "nextRunAt": "2026-03-01T06:00:00.000Z",
+      "recentLog": "Synced 50 tracks and 50 artists"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-1",
+      "title": "Design mission control home",
+      "description": "Dashboard for agents, cron and token KPIs",
+      "assignee": "Alan Turing",
+      "status": "doing",
+      "createdAt": "2026-03-01T00:00:00.000Z",
+      "updatedAt": "2026-03-01T01:30:00.000Z"
+    }
+  ],
+  "tokenUsage": [
+    {
+      "id": "tok-1",
+      "agent": "Alan Turing",
+      "taskId": "task-1",
+      "tokens": 24300,
+      "recordedAt": "2026-03-01T01:45:00.000Z"
+    }
+  ]
+}
