@@ -1,5 +1,6 @@
 import { KanbanBoard } from "@/components/KanbanBoard";
 import { getOverview } from "@/lib/analytics";
+import { getWatchedAgents } from "@/lib/agentWatcher";
 import { readStore } from "@/lib/store";
 
 function badgeFor(status: string) {
@@ -10,6 +11,7 @@ function badgeFor(status: string) {
 
 export default async function Home() {
   const store = await readStore();
+  const watchedAgents = await getWatchedAgents(store.agents);
   const overview = await getOverview();
 
   return (
@@ -33,7 +35,7 @@ export default async function Home() {
         <article className="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4">
           <h2 className="mb-3 text-lg font-semibold">Agents</h2>
           <div className="space-y-3">
-            {store.agents.map((agent) => (
+            {watchedAgents.map((agent) => (
               <div key={agent.id} className="rounded-lg border border-zinc-800 bg-zinc-900/70 p-3">
                 <div className="flex items-center justify-between gap-3">
                   <p className="font-semibold">{agent.name}</p>

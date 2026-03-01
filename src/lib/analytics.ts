@@ -1,9 +1,11 @@
+import { getWatchedAgents } from "./agentWatcher";
 import { readStore } from "./store";
 
 export async function getOverview() {
   const store = await readStore();
+  const watchedAgents = await getWatchedAgents(store.agents);
 
-  const activeAgents = store.agents.filter((a) => a.status === "working").length;
+  const activeAgents = watchedAgents.filter((a) => a.status === "working").length;
   const failingJobs = store.cronJobs.filter((j) => j.lastStatus === "failed").length;
   const todo = store.tasks.filter((t) => t.status === "todo").length;
   const doing = store.tasks.filter((t) => t.status === "doing").length;
